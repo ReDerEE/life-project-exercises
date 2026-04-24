@@ -59,21 +59,36 @@ const trade = [
 const tower = [
   {
     question: `Miks oli tulekahju keskajal ohtlikum kui tänapäeval?`,
-    options: ["Tulekahju polnud sellel ajal ohtlik","Majad olid tehtud puidust ja õlgedest", "Majad olid tehtud kividest"],
+    options: [
+      "Tulekahju polnud sellel ajal ohtlik",
+      "Majad olid tehtud puidust ja õlgedest",
+      "Majad olid tehtud kividest",
+    ],
     correct_index: 1,
-    correct_text: "Keskajal oli tulekahju ohtlikum, sest majad olid enamasti ehitatud puidust ja katused õlgedest, mis süttisid väga kergesti. Samuti olid majad tihedalt üksteise kõrval ning puudusid korralikud tuletõrjevahendid ja -teenistus. Seetõttu levis tuli kiiresti ja seda oli raske kustutada.",
-    incorrect_text: "Keskajal oli tulekahju ohtlikum, sest majad olid enamasti ehitatud puidust ja katused õlgedest, mis süttisid väga kergesti. Samuti olid majad tihedalt üksteise kõrval ning puudusid korralikud tuletõrjevahendid ja -teenistus. Seetõttu levis tuli kiiresti ja seda oli raske kustutada.",
+    correct_text:
+      "Keskajal oli tulekahju ohtlikum, sest majad olid enamasti ehitatud puidust ja katused õlgedest, mis süttisid väga kergesti. Samuti olid majad tihedalt üksteise kõrval ning puudusid korralikud tuletõrjevahendid ja -teenistus. Seetõttu levis tuli kiiresti ja seda oli raske kustutada.",
+    incorrect_text:
+      "Keskajal oli tulekahju ohtlikum, sest majad olid enamasti ehitatud puidust ja katused õlgedest, mis süttisid väga kergesti. Samuti olid majad tihedalt üksteise kõrval ning puudusid korralikud tuletõrjevahendid ja -teenistus. Seetõttu levis tuli kiiresti ja seda oli raske kustutada.",
   },
   {
     question: `Nimeta üks erinevus keskaja ja tänapäeva ohuteavituse vahel.`,
-    options: ["Infot levitati SMS'ide läbi", "Infot levitati suitsusõnumite läbi", "Infot levitatu kirikukellade läbi"],
+    options: [
+      "Infot levitati SMS'ide läbi",
+      "Infot levitati suitsusõnumite läbi",
+      "Infot levitatu kirikukellade läbi",
+    ],
     correct_index: 2,
     correct_text: "Just nii, kasutati kirikukellasid, et edastada infot!",
-    incorrect_text: "Info levitus ei olnud nii aeglane kui suitsusõnum, aga ei olnud ka nii kiire kui SMS!",
+    incorrect_text:
+      "Info levitus ei olnud nii aeglane kui suitsusõnum, aga ei olnud ka nii kiire kui SMS!",
   },
   {
     question: `Nimeta veel üks erinevus keskaja ja tänapäeva ohuteavituse vahel.`,
-    options: ["Infot levitati hüüdmisega", "Infot levikuks kasutati jooksupoisse", "Infot levitati läbi tõrvikute"],
+    options: [
+      "Infot levitati hüüdmisega",
+      "Infot levikuks kasutati jooksupoisse",
+      "Infot levitati läbi tõrvikute",
+    ],
     correct_index: 0,
     correct_text: "Just nii, info edastus oli veel läbi hüüdmise!",
     incorrect_text: "Kõige tavalisem viis- karju, et edastada infot!",
@@ -83,14 +98,53 @@ const tower = [
     options: ["Jah", "Ei"],
     correct_index: 1,
     correct_text: "Täpselt nii, ta vaatab põhja suunas hoopis!",
-    incorrect_text: "Kui Vana Toomas vaatab mere poole, siis vaatab ta põhja suunas!",
+    incorrect_text:
+      "Kui Vana Toomas vaatab mere poole, siis vaatab ta põhja suunas!",
   },
-   {
+  {
     question: `Kui seisad Raekoja tornis ja vaatad lõuna poole, kas sa näed merd?`,
     options: ["Jah", "Ei"],
     correct_index: 1,
     correct_text: "Täpselt nii, sa näed linna hoopis!",
-    incorrect_text: "Kui seisad Raekoja tornis ja vaatad lõuna poole, näed linna!",
+    incorrect_text:
+      "Kui seisad Raekoja tornis ja vaatad lõuna poole, näed linna!",
+  },
+];
+
+const apothecary = [
+  {
+    question: "Millest valmistati raeapteegis ravimeid keskajal?",
+    options: [
+      "Ainult veest",
+      "Taimedest, loomadest ja mineraalidest",
+      "Ainult tablettidest",
+    ],
+    correct_index: 1,
+    correct_text:
+      "Just nii, vanasti valmistati ravimeid taimedest, loomsetest saadustest ja mineraalidest!",
+    incorrect_text: "Vanasti valmistati ravimeid taimedest, loomsetest saadustest ja mineraalidest!",
+  },
+  {
+    question: "Mida kasutati keskajal unetuse või haiguste raviks?",
+    options: [
+      "Ravimteed ja looduslikke ravimeid",
+      "Saadeti inimene koju voodisse puhkama",
+      "Anti sibulat, puukoori ja paberit",
+    ],
+    correct_index: 0,
+    correct_text: "Just nii, andsime haigele inimesele ravimteed ja teisi looduslikke ravimeid!",
+    incorrect_text: "Vanasti andsime haigele inimesele ikka ravimteed ja looduslikke ravimeid!",
+  },
+  {
+    question: "Milline tee sobib unetuse leevendamiseks?",
+    options: [
+      "Lihtsalt soe vesi",
+      "Sibul ja puukoor",
+      "Sidrunimeliss, pune, kanarbik, nurmenukk, lavendel",
+    ],
+    correct_index: 2,
+    correct_text: "Just nii, see taimetee aitavb unetust leevendada!",
+    incorrect_text: "Me ikka kasutasime mitut taime ravimteedes!",
   },
 ];
 
@@ -107,8 +161,10 @@ switch (type) {
   case "tower":
     question_answers = tower;
     break;
+  case "apothecary":
+    question_answers = apothecary;
+    break;
 }
-
 
 let question_container = document.getElementById("question");
 let button_container = document.getElementById("submit_container");
@@ -129,9 +185,9 @@ function handleOption(index) {
     button_container.innerHTML = `<button id="submit" class="bottomButton">Järgmine</button>`;
   }
 
-  option_buttons = document.getElementsByClassName("question_option")
-  for(let i = 0; i<option_buttons.length; i++){
-    option_buttons[i].onclick=""
+  option_buttons = document.getElementsByClassName("question_option");
+  for (let i = 0; i < option_buttons.length; i++) {
+    option_buttons[i].onclick = "";
   }
 
   $("#submit").on("click", () => {
@@ -159,16 +215,14 @@ function updateQuestion(index) {
 }
 
 function end() {
-  let result_text = ""
-  const answer_coef = correct_answers/ question_answers.length
-  if(answer_coef>=0.7){
-    result_text = "Ülesanne edukalt lõpetatud!"
-  }
-  else if(answer_coef>=0.5 && answer_coef < 0.7){
-    result_text="Ülesanne keskmiselt lõpetatud!"
-  }
-  else{
-    result_text="Ülesanne lõpetatud!"
+  let result_text = "";
+  const answer_coef = correct_answers / question_answers.length;
+  if (answer_coef >= 0.7) {
+    result_text = "Ülesanne edukalt lõpetatud!";
+  } else if (answer_coef >= 0.5 && answer_coef < 0.7) {
+    result_text = "Ülesanne keskmiselt lõpetatud!";
+  } else {
+    result_text = "Ülesanne lõpetatud!";
   }
 
   whole = document.getElementById("container");
