@@ -128,6 +128,12 @@ function handleOption(index) {
   } else {
     button_container.innerHTML = `<button id="submit" class="bottomButton">Järgmine</button>`;
   }
+  option_buttons = document.getElementsByClassName("question_option")
+
+  for(let i = 0; i<option_buttons.length; i++){
+    option_buttons[i].onclick=""
+  }
+
   $("#submit").on("click", () => {
     current_question_index++;
     updateQuestion(current_question_index);
@@ -154,8 +160,19 @@ function updateQuestion(index) {
 
 function end() {
   whole = document.getElementById("container");
+  let result_text = ""
+  const answer_coef = correct_answers/ question_answers.length
+  if(answer_coef>=0.7){
+    result_text = "Ülesanne edukalt lõpetatud!"
+  }
+  else if(answer_coef>=0.5 && answer_coef < 0.7){
+    result_text="Ülesanne keskmiselt lõpetatud!"
+  }
+  else{
+    result_text="Ülesanne lõpetatud!"
+  }
   whole.innerHTML = ` <div id="resultsTitle">
-        Ülesanne edukalt lõpetatud!
+      ${result_text}
     </div>
     <div id="results">
         ${correct_answers}p / ${question_answers.length}p
