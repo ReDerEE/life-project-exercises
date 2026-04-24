@@ -122,7 +122,8 @@ const apothecary = [
     correct_index: 1,
     correct_text:
       "Just nii, vanasti valmistati ravimeid taimedest, loomsetest saadustest ja mineraalidest!",
-    incorrect_text: "Vanasti valmistati ravimeid taimedest, loomsetest saadustest ja mineraalidest!",
+    incorrect_text:
+      "Vanasti valmistati ravimeid taimedest, loomsetest saadustest ja mineraalidest!",
   },
   {
     question: "Mida kasutati keskajal unetuse või haiguste raviks?",
@@ -132,8 +133,10 @@ const apothecary = [
       "Anti sibulat, puukoori ja paberit",
     ],
     correct_index: 0,
-    correct_text: "Just nii, andsime haigele inimesele ravimteed ja teisi looduslikke ravimeid!",
-    incorrect_text: "Vanasti andsime haigele inimesele ikka ravimteed ja looduslikke ravimeid!",
+    correct_text:
+      "Just nii, andsime haigele inimesele ravimteed ja teisi looduslikke ravimeid!",
+    incorrect_text:
+      "Vanasti andsime haigele inimesele ikka ravimteed ja looduslikke ravimeid!",
   },
   {
     question: "Milline tee sobib unetuse leevendamiseks?",
@@ -188,6 +191,13 @@ function handleOption(index) {
   option_buttons = document.getElementsByClassName("question_option");
   for (let i = 0; i < option_buttons.length; i++) {
     option_buttons[i].onclick = "";
+    if (question_answers[current_question_index].correct_index != i) {
+      option_buttons[i].style.borderColor = "#a11b1b";
+      option_buttons[i].style.color = "#a11b1b";
+    } else {
+      option_buttons[i].style.borderColor = "#265f26";
+      option_buttons[i].style.color = "#265f26";
+    }
   }
 
   $("#submit").on("click", () => {
